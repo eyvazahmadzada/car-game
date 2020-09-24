@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: larger;
+  position: relative;
+  background-color: #0f668f;
+  color: white;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 100;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+  background-image: url("./assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.gameArea>img {
+  z-index: 2;
+}
+
+.hide {
+  display: none;
+}
+
+.gameHeader {
+  font-size: 3rem;
+  margin: 7px 0;
+}
+
+.message {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  background-color: white;
+  outline: none;
+  font-size: 1.4rem;
+  border: 2px solid #2399cc;
+  border-radius: 5px;
+  font-family: "Bebas Neue", cursive;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transition: 0.5s;
+  background-color: #307055;
+  color: white;
+}
+
+.game>input {
+  display: block;
+  font-family: "Bebas Neue", cursive;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.3rem;
+  border: 2px solid #2399cc;
+  outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.game {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.gameArea {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  height: 100vh;
+  border: 1px solid black;
+  box-sizing: border-box;
+  background-color: black;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.car,
+.enemy {
+  position: absolute;
+  background-image: url("./assets/car.png");
+  background-size: cover;
+  width: 60px;
+  height: 120px;
+}
+
+.car {
+  bottom: 10%;
+  left: 45%;
+  background-color: white;
+  z-index: 2;
+  touch-action: manipulation;
+}
+
+.enemy {
+  z-index: -1;
+}
+
+.road {
+  position: absolute;
+  width: 2%;
+  left: 49%;
+  height: 100px;
+  background-color: white;
+  z-index: -2;
+}
+
+.game {
+  z-index: 50;
+}
+
+.img {
+  position: absolute;
+  display: none;
+  bottom: 60px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 992px) {
+
+  .car,
+  .enemy {
+    width: 60px;
+    height: 120px;
+  }
+
+  .gameArea {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .gameArea {
+    width: 80%;
+  }
+
+  .img {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+
+  .game>input,
+  .game>button {
+    font-size: 1.25rem;
+  }
+
+  .gameHeader {
+    font-size: 2.5rem;
+  }
+
+  .car,
+  .enemy {
+    width: 55px;
+    height: 110px;
+  }
+
+  .gameArea {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+
+  .car,
+  .enemy {
+    width: 50px;
+    height: 100px;
+  }
+}
